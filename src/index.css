@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+:root {
+  --grey: #858694;
+  --white: #fff;
+  --primary: #f5913e;
+  --secondary: #e0e0e0;
+  --border: 2px solid #fefefe;
+  --trans: all 0.1s ease-in;
+  --font: 'Righteous', cursive;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1rem;
+  font-size: 40px;
+  font-family: var(--font);
+}
+
+.calculator {
+  max-width: 50%;
+  margin: 1rem auto;
+  border: 2px solid black;
+  font-size: 40px;
+  font-family: var(--font);
+}
+
+.cal-screen {
+  padding: 2rem 1rem;
+  border: 2px;
+  width: 100%;
+  background-color: var(--grey);
+  color: #e0e0e0;
+  text-align: right;
+  font-size: 40px;
+  font-family: var(--font);
+}
+
+.cal-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  font-size: 40px;
+  font-family: var(--font);
+}
+
+.btn {
+  padding: 2rem 1rem;
+  border: 2px solid var(--secondary);
+  font-size: 28px;
+  font-family: var(--font);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #e0e0e0;
+}
+
+.btn.primary {
+  background-color: var(--primary);
+}
+
+.btn.primary:hover {
+  background: #f5913e;
+}
+
+.btn.zero {
+  grid-area: 5/1/5/3;
+}

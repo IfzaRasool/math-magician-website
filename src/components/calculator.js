@@ -33,4 +33,4 @@ class Calculator extends React.Component {
     );
   }
 }
-export default Calculator;
+export default { Calculator, calculate, operate };

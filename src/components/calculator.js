@@ -1,31 +1,58 @@
 /* eslint-disable react/prefer-stateless-function */
-import React from 'react';
+import React, { Component } from 'react';
+import calculate from '../logic/calculate';
+import CreateButton from './buttons';
 
-class Calculator extends React.Component {
+class Calculator extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      total: 0,
+      next: null,
+      operation: null,
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(btnValue) {
+    this.setState((obj) => calculate(obj, btnValue));
+  }
+
   render() {
+    const { total, next, operation } = this.state;
+    const btnName = [
+      'AC',
+      '+/-',
+      '%',
+      '÷',
+      '7',
+      '8',
+      '9',
+      'x',
+      '4',
+      '5',
+      '6',
+      '-',
+      '1',
+      '2',
+      '3',
+      '+',
+      '0',
+      '.',
+      '=',
+    ];
+
     return (
       <div className="calculator">
-        <input type="text" className="cal-screen" value="0" disabled />
+        <div className="cal-screen">
+          { total}
+          { operation}
+          { next }
+        </div>
         <div className="cal-buttons">
-          <button type="button" className="btn">AC</button>
-          <button type="button" className="btn">+/-</button>
-          <button type="button" className="btn">%</button>
-          <button type="button" className="btn primary">/</button>
-          <button type="button" className="btn">7</button>
-          <button type="button" className="btn">8</button>
-          <button type="button" className="btn">9</button>
-          <button type="button" className="btn primary">*</button>
-          <button type="button" className="btn">4</button>
-          <button type="button" className="btn">5</button>
-          <button type="button" className="btn">6</button>
-          <button type="button" className="btn primary">-</button>
-          <button type="button" className="btn">1</button>
-          <button type="button" className="btn">2</button>
-          <button type="button" className="btn">3</button>
-          <button type="button" className="btn primary">+</button>
-          <button type="button" className="btn zero">0</button>
-          <button type="button" className="btn">.</button>
-          <button type="button" className="btn primar">=</button>
+          { btnName.map((btn) => (
+            <CreateButton key={btn} value={btn} handleClick={this.handleClick} />
+          ))}
         </div>
       </div>
     );

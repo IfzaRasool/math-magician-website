@@ -1,61 +1,56 @@
-/* eslint-disable react/prefer-stateless-function */
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import calculate from '../logic/calculate';
 import CreateButton from './buttons';
 
-class Calculator extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      total: 0,
-      next: null,
-      operation: null,
-    };
-    this.handleClick = this.handleClick.bind(this);
-  }
+const Calculator = () => {
+  const obj = {
+    total: 0,
+    next: null,
+    operation: null,
+  };
 
-  handleClick(btnValue) {
-    this.setState((obj) => calculate(obj, btnValue));
-  }
+  const [newobj, setObj] = useState(obj);
 
-  render() {
-    const { total, next, operation } = this.state;
-    const btnName = [
-      'AC',
-      '+/-',
-      '%',
-      '÷',
-      '7',
-      '8',
-      '9',
-      'x',
-      '4',
-      '5',
-      '6',
-      '-',
-      '1',
-      '2',
-      '3',
-      '+',
-      '0',
-      '.',
-      '=',
-    ];
+  const handleClick = (btnValue) => {
+    const newProps = { ...newobj };
+    setObj(calculate(newProps, btnValue));
+  };
+  const btnName = [
+    'AC',
+    '+/-',
+    '%',
+    '÷',
+    '7',
+    '8',
+    '9',
+    'x',
+    '4',
+    '5',
+    '6',
+    '-',
+    '1',
+    '2',
+    '3',
+    '+',
+    '0',
+    '.',
+    '=',
+  ];
 
-    return (
-      <div className="calculator">
-        <div className="cal-screen">
-          { total}
-          { operation}
-          { next }
-        </div>
-        <div className="cal-buttons">
-          { btnName.map((btn) => (
-            <CreateButton key={btn} value={btn} handleClick={this.handleClick} />
-          ))}
-        </div>
+  return (
+    <div className="calculator">
+      <div className="cal-screen">
+        { newobj.total}
+        { newobj.operation}
+        { newobj.next }
       </div>
-    );
-  }
-}
+      <div className="cal-buttons">
+        { btnName.map((btn) => (
+          <CreateButton key={btn} value={btn} handleClick={handleClick} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 export default Calculator;

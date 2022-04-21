@@ -1,4 +1,4 @@
-/* eslint-disable arrow-body-style */
+/* eslint-disable no-nested-ternary */
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 
@@ -11,7 +11,8 @@ export default class CreateButton extends Component {
   render() {
     const { value, handleClick } = this.props;
     return (
-      <button type="button" className="btn" value="AC" onClick={() => handleClick(value)}>
+
+      <button type="button" className={value === '+' || value === '=' || value === 'x' || value === '÷' || value === '-' ? 'btn primary' : value === '0' ? 'btn zero' : 'btn'} value="AC" onClick={() => handleClick(value)}>
         {value}
       </button>
     );

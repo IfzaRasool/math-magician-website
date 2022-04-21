@@ -1,8 +1,9 @@
 /* eslint-disable react/prefer-stateless-function */
-import React from 'react';
+import React, { Component } from 'react';
 import calculate from '../logic/calculate';
+import CreateButton from './buttons';
 
-class Calculator extends React.Component {
+class Calculator extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,13 +14,33 @@ class Calculator extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(btn) {
-    const btnData = btn.target.textContent;
-    this.setState((event) => calculate(event, btnData));
+  handleClick(btnValue) {
+    this.setState((obj) => calculate(obj, btnValue));
   }
 
   render() {
     const { total, next, operation } = this.state;
+    const btnName = [
+      'AC',
+      '+/-',
+      '%',
+      '÷',
+      '7',
+      '8',
+      '9',
+      'x',
+      '4',
+      '5',
+      '6',
+      '-',
+      '1',
+      '2',
+      '3',
+      '+',
+      '0',
+      '.',
+      '=',
+    ];
 
     return (
       <div className="calculator">
@@ -29,6 +50,12 @@ class Calculator extends React.Component {
           { next }
         </div>
         <div className="cal-buttons">
+          { btnName.map((btn) => (
+            <CreateButton key={btn} value={btn} handleClick={this.handleClick} />
+          ))}
+        </div>
+
+        { /* <div className="cal-buttons">
           <button type="button" className="btn" onClick={this.handleClick}>AC</button>
           <button type="button" className="btn" onClick={this.handleClick}>+/-</button>
           <button type="button" className="btn" onClick={this.handleClick}>%</button>
@@ -48,7 +75,7 @@ class Calculator extends React.Component {
           <button type="button" className="btn zero" onClick={this.handleClick}>0</button>
           <button type="button" className="btn" onClick={this.handleClick}>.</button>
           <button type="button" className="btn primary" onClick={this.handleClick}>=</button>
-        </div>
+</div> */ }
       </div>
     );
   }

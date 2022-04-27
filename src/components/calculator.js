@@ -38,16 +38,19 @@ const Calculator = () => {
   ];
 
   return (
-    <div className="calculator">
-      <div className="cal-screen">
-        { newobj.total}
-        { newobj.operation}
-        { newobj.next }
-      </div>
-      <div className="cal-buttons">
-        { btnName.map((btn) => (
-          <CreateButton key={btn} value={btn} handleClick={handleClick} />
-        ))}
+    <div className="cal-container">
+      <p>Let us do some Math!!!</p>
+      <div className="calculator">
+        <div className="cal-screen">
+          { newobj.total}
+          { newobj.operation}
+          { newobj.next }
+        </div>
+        <div className="cal-buttons">
+          { btnName.map((btn) => (
+            <CreateButton key={btn} value={btn} handleClick={handleClick} />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -108,6 +108,14 @@ body {
   grid-template-columns: repeat(2, 1fr);
 }
 
+.main-heading {
+  font-size: 40px;
+  position: absolute;
+  padding: 3rem;
+  transition: 2s;
+  margin-top: 1rem;
+}
+
 .home-para > img {
   margin-top: 10rem;
   margin-left: 5rem;
@@ -163,4 +171,11 @@ li {
   position: absolute;
   top: 8rem;
   right: 0;
+}
+
+li :hover {
+  padding: 1rem;
+  font-size: 20px;
+  color: red;
+  transition: 1s;
 }

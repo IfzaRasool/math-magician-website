@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.google.com/share?selection.family=Fira%20Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900%7CMerienda:wght@700');
 
 :root {
   --grey: #858694;
@@ -8,6 +9,7 @@
   --border: 2px solid #fefefe;
   --trans: all 0.1s ease-in;
   --font: 'Righteous', cursive;
+  --fonthome: 'Merienda', cursive;
 }
 
 * {
@@ -22,10 +24,27 @@ body {
   font-family: var(--font);
 }
 
+.cal-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  font-size: 40px;
+  font-family: var(--fonthome);
+}
+
+.cal-container > p {
+  font-size: 40px;
+  font-family: var(--fonthome);
+  padding-top: 15rem;
+  padding-left: 15rem;
+  line-height: 2rem;
+  font-weight: 900;
+}
+
 .calculator {
-  max-width: 50%;
-  margin: 1rem auto;
-  border: 2px solid black;
+  max-width: 60%;
+  margin-top: 5rem;
+  margin-left: 5rem;
+  border: 5px solid black;
   font-size: 40px;
   font-family: var(--font);
 }
@@ -70,4 +89,93 @@ body {
 
 .btn.zero {
   grid-area: 5/1/5/3;
+}
+
+.header-heading {
+  justify-content: center;
+  justify-items: center;
+  font-size: 22px;
+  font-family: var(--fonthome);
+  color: #f5913e;
+  box-shadow: 5px 10px red;
+  width: 20%;
+  border-radius: 10rem;
+  height: 20%;
+}
+
+.home-para {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.main-heading {
+  font-size: 40px;
+  position: absolute;
+  padding: 3rem;
+  transition: 2s;
+  margin-top: 1rem;
+}
+
+.home-para > img {
+  margin-top: 10rem;
+  margin-left: 5rem;
+}
+
+.home-content {
+  font-family: var(--fonthome);
+  font-size: 18px;
+  line-height: 1.5rem;
+  margin: 10rem 5rem;
+  background-color: var(--primary);
+  padding: 1rem;
+  border-top-right-radius: 10rem;
+}
+
+.headerItem {
+  display: flex;
+  justify-content: space-around;
+  justify-items: center;
+  align-items: center;
+  font-size: 18px;
+  padding: 1.5rem;
+}
+
+li {
+  list-style: none;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+.quotes-container {
+  margin: 5rem;
+  padding: 10rem;
+  font-size: 20px;
+  background-color: aquamarine;
+  border-radius: 50%;
+  font-family: var(--fonthome);
+}
+
+.quotes-container > h2 {
+  font-size: 30px;
+}
+
+.quotes-container > p {
+  padding: 2rem;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 2rem;
+}
+
+.quotesImg {
+  width: 10%;
+  position: absolute;
+  top: 8rem;
+  right: 0;
+}
+
+li :hover {
+  padding: 1rem;
+  font-size: 20px;
+  color: red;
+  transition: 1s;
 }

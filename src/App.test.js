@@ -55,7 +55,7 @@ describe('calculate test group', () => {
     });
   });
 
-  test('empty object', () => {
+  it('empty object', () => {
     const objempty = {
       total: null,
       next: '0',
@@ -64,7 +64,7 @@ describe('calculate test group', () => {
     expect(calculate(objempty, '0')).toEqual({});
   });
 
-  test('expect an object value next to be vals.obj.next + number', () => {
+  it('Next value of the object', () => {
     expect(calculate(0, '10')).toEqual({
       total: null,
       next: '10',
@@ -72,7 +72,7 @@ describe('calculate test group', () => {
   });
 
   //   when the = is clicked
-  test('expect an empty object', () => {
+  it('expect an empty object', () => {
     const objEqual = {
       total: '90',
       next: '52',

@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
-import Calculator from './components/calculator';
-import calculate from './logic/calculate';
-import operate from './logic/operate';
+import App from '../App';
+import Calculator from '../components/calculator';
+import calculate from '../logic/calculate';
+import operate from '../logic/operate';
 
 test('render text', () => {
   render(<App />);

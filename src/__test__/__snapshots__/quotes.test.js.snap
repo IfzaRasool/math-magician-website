@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render correctly have no items 1`] = `
+<div
+  className="quotes"
+>
+  <img
+    alt="quotes"
+    className="quotesImg"
+    src="quotes1.jpg"
+  />
+  <div
+    className="quotes-container"
+  >
+    <h2>
+      Math Magicians
+    </h2>
+    <p>
+       
+      Mathematics is a game played according to certain simple rules with meaningless marks on paper. David Hilbert
+    </p>
+  </div>
+</div>
+`;

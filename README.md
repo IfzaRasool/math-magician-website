@@ -12,6 +12,8 @@
 
 [Live Demo Link](https://livedemo.com) _available once deployed_
 
+![project2](https://user-images.githubusercontent.com/93009273/165782363-20613337-33fb-4fe7-8833-560597a1c7e3.png)
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
@@ -37,7 +39,6 @@ To get a local copy up and running follow these simple example steps.
 npm run test
 
 ### Deployment
-
 
 ## Author
 

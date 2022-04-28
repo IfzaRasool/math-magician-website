@@ -13,21 +13,25 @@ test('render text', () => {
 it('Addition ', () => {
   render(<Calculator />);
   expect(operate('1', '2', '+')).toBe('3');
+  expect(operate('4', '7', '+')).toBe('11');
 });
 
 it('Subtraction', () => {
   render(<Calculator />);
   expect(operate('201587963', '3652', '-')).toBe('201584311');
+  expect(operate('5', '3', '-')).toBe('2');
 });
 
 it('Multiplication', () => {
   render(<Calculator />);
   expect(operate('0', '0', 'x')).toBe('0');
+  expect(operate('40', '3', 'x')).toBe('120');
 });
 
 it('Division', () => {
   render(<Calculator />);
   expect(operate('200000', '200', '÷')).toBe('1000');
+  expect(operate('500', '2', '÷')).toBe('250');
 });
 
 describe('calculate test group', () => {

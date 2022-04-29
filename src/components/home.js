@@ -3,7 +3,7 @@ import homePic from './images/home1.gif';
 
 const Home = () => (
   <div>
-    <h1 className="main-heading">Welcome to our Page !</h1>
+    <h1 className="main-heading">Welcome to our Page...!</h1>
     <div className="home-para">
 
       <img src={homePic} alt="homepic" />

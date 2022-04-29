@@ -11,6 +11,7 @@
 ## Live Demo ()
 
 [Live Demo Link](https://math-magician-reactapp.herokuapp.com/) (deploy on Heroku)
+
 [Live Demo Link](https://inspiring-gnome-1e83c6.netlify.app/) (deploy on Netlify)
 
 ![project2](https://user-images.githubusercontent.com/93009273/165782363-20613337-33fb-4fe7-8833-560597a1c7e3.png)
